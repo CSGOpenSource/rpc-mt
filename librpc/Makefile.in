@@ -40,14 +40,14 @@ mcc:
 $(OBJ): svc_mtxprt.h svc_debug.h
 
 librpc.so: $(OBJ)
-	rm -f librpc.so librpc.so.1
-	$(CC) -shared -Wl,-soname,librpc.so.1 -o librpc.so.1.0.1 $(CFLAGS) $(SRC_C)
-	ln -s librpc.so.1.0.1 librpc.so.1
-	ln -s librpc.so.1.0.1 librpc.so
+	rm -f librpc.so librpc.so.2
+	$(CC) -shared -Wl,-soname,librpc.so.2 -o librpc.so.1.0.2 $(CFLAGS) $(SRC_C)
+	ln -s librpc.so.1.0.2 librpc.so.2
+	ln -s librpc.so.1.0.2 librpc.so
 
 clean:
 	rm -f cscope.files cscope.out cscope.in.out cscope.po.out tags
-	rm -f librpc.so.1.0.1 librpc.so.1 librpc.so *.o *.i *.m *.H *.D
+	rm -f librpc.so.1.0.2 librpc.so.2 librpc.so *.o *.i *.m *.H *.D
 
 distclean: clean
 	rm -f Makefile config.status config.log configure.ac

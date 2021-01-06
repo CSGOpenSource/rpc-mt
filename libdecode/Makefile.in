@@ -36,15 +36,15 @@ hfiles: $(SRC_C:%.c=%.H)
 
 
 libdecode.so: $(OBJ)
-	rm -f libdecode.so libdecode.so.1
-	$(CC) -shared -Wl,-soname,libdecode.so.1 -o libdecode.so.1.0.1 $(CFLAGS) $(SRC_C)
-	ln -s libdecode.so.1.0.1 libdecode.so.1
-	ln -s libdecode.so.1.0.1 libdecode.so
+	rm -f libdecode.so libdecode.so.2
+	$(CC) -shared -Wl,-soname,libdecode.so.2 -o libdecode.so.1.0.2 $(CFLAGS) $(SRC_C)
+	ln -s libdecode.so.1.0.2 libdecode.so.2
+	ln -s libdecode.so.1.0.2 libdecode.so
 	# scanelf -qT libdecode.so.1.0.1
 
 clean:
 	rm -f cscope.out cscope.in.out cscope.po.out tags
-	rm -f libdecode.so.1.0.1 libdecode.so.1 libdecode.so *.o *.i *.m *.H
+	rm -f libdecode.so.1.0.2 libdecode.so.2 libdecode.so *.o *.i *.m *.H
 	rm -f decode-esym.c decode-esym-table.c
 
 distclean: clean
