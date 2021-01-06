@@ -672,7 +672,6 @@ svctcp_recv(SVCXPRT *xprt, struct rpc_msg *msg)
         if (opt_svc_trace) {
             show_xports();
         }
-        svc_die();
     }
 
 #endif /* CONFIG_DIE_ON_RECV_FAILURE */
@@ -714,7 +713,6 @@ svctcp_getargs(SVCXPRT *xprt, xdrproc_t xdr_args, caddr_t args_ptr)
         if (opt_svc_trace) {
             show_xports();
         }
-        svc_die();
     }
 
     xprt_progress_setbits(xprt, XPRT_DONE_GETARGS);
@@ -742,7 +740,6 @@ svctcp_freeargs(SVCXPRT *xprt, xdrproc_t xdr_args, caddr_t args_ptr)
     if (failfast && rv == 0) {
         // Die quickly in case of error.
         show_xports();
-        svc_die();
     }
 
     return (rv);
